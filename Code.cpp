@@ -120,6 +120,50 @@ bool exit = 0;
   }
   }
 
+
+void program1()
+{
+SevenSeg.set_display_value(2);
+Counter.start_timer(5);
+
+SevenSeg.set_display_value(3);
+Counter.start_timer(2);
+
+SevenSeg.set_display_value(4);
+DrumDrive.set_drum_movement(1,1);
+Counter.start_timer(3);
+DrumDrive.set_drum_movement(0,1);
+
+SevenSeg.set_display_value(1);
+Counter.start_timer(4);
+
+SevenSeg.set_display_value(2);
+Counter.start_timer(4);
+
+SevenSeg.set_display_value(5);
+DrumDrive.set_drum_movement(1,1);
+Counter.start_timer(4);
+DrumDrive.set_drum_movement(0,1);
+
+SevenSeg.set_display_value(1);
+Counter.start_timer(3);
+
+SevenSeg.set_display_value(6);
+DrumDrive.set_drum_movement(1,0);
+Counter.start_timer(6);
+DrumDrive.set_drum_movement(0,0);
+
+SevenSeg.set_display_value(7);
+Counter.start_timer(5);
+
+SevenSeg.set_display_value(8);
+
+
+}
+
+
+
+
 int main (void)	
 {
  
@@ -195,9 +239,16 @@ button_test();									//Calls the button test routine so the user can test the 
   cin.ignore();									//Flush the input buffer
   break;
   
+    case '6':
+  
+program1();									//Calls the button test routine so the user can test the input buttons
+  displaymenu();								//Return to menu
+  cin.ignore();									//Flush the input buffer
+  break;
   
   
-  case '6':
+  
+  case '7':
   cin.ignore();												//Flush the input buffer
   u32 length;												//Store a user entered value used to determin delay length
   cout << "Enter a length of time to test: " << endl;
@@ -206,8 +257,17 @@ Counter.start_timer(length);								//Call the delay subroutine with the users d
 cin.ignore();
   displaymenu();											//Redraw user selection options
   break;
+
+  case '8':
   
-    case '7':
+program1();									//Calls the button test routine so the user can test the input buttons
+  displaymenu();								//Return to menu
+  cin.ignore();									//Flush the input buffer
+  break;
+  
+
+
+    case '9':
   cin.ignore();
   cout << "We hope you enjoyed using the Bytronic Washing Machine Simulator, hope to see you again soon :)" << endl;
 //exit(EXIT_FAILURE);
